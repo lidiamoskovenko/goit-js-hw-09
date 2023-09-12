@@ -16,3 +16,21 @@ img {
   display: block;
   max-width: 100%;
 }
+.text{
+
+}
+.timer{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+.field{
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+
+ text-align: center;
+ font-size: 30px;
+ font-weight: 600;
+}

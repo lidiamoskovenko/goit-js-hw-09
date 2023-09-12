@@ -18,12 +18,12 @@ const form = document.querySelector('.form');
 
 form.addEventListener('submit', onSubmitBtn);
 let delay;
+let position;
 function onSubmitBtn (event){
   event.preventDefault();
-
+  const promises = [];
   for (position=1; position<=form.amount.value;position++){
     delay = +form.delay.value + (+form.step.value) * (position - 1);
-  const promises = [];
 
     createPromise(position, delay)
       .then(({ position, delay }) => {
@@ -33,8 +33,8 @@ function onSubmitBtn (event){
         Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
 
-    promises.push(createPromise(position, delay));
+    promises.push(createPromise(position, delay))};
   
   Promise.race(promises)
   .then(value => console.log(value)) 
-  .catch(error => console.log(error))}}};
+  .catch(error => console.log(error))}};

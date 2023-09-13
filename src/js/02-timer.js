@@ -57,9 +57,10 @@ refs.startBtn.addEventListener('click', () =>
 
     const startTime=flLbr.selectedDates[0];
     const currentTime = new Date();
-    const deltaTime = convertMs(startTime-currentTime);
-    updateTimer(deltaTime);
-        if(deltaTime < 1000){
+    const deltaTime = startTime-currentTime;
+    const timerTime = convertMs(startTime-currentTime);
+    updateTimer(timerTime);
+        if(deltaTime <= 1000){
             clearInterval(timerId);
             refs.text.disabled = false;
 }},1000)});
